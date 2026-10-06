@@ -1,0 +1,542 @@
+{
+  "dataset_version": "v1",
+  "dataset": "Oxford-IIIT Pet",
+  "license": "CC BY-SA 4.0",
+  "design": {
+    "seed": 2026,
+    "rule": "2 cat + 2 dog breeds; exactly one same-species pair with CV error >= 0.039 (hard pair), every other same-species pair < 0.020",
+    "similarity_source": "tools/breed_pairs.json (ResNet-50 (torchvision IMAGENET1K_V2) global features + logistic regression, 5-fold CV)",
+    "variant_00": "teacher demo variant: overlap <= 2 breeds with any student variant, max number of real data defects (non-RGB images, empty trimaps), then breeds least used by students 01-22"
+  },
+  "variants": [
+    {
+      "variant": 0,
+      "breeds": [
+        "Bengal",
+        "Egyptian_Mau",
+        "saint_bernard",
+        "staffordshire_bull_terrier"
+      ],
+      "species": {
+        "Bengal": "cat",
+        "Egyptian_Mau": "cat",
+        "saint_bernard": "dog",
+        "staffordshire_bull_terrier": "dog"
+      },
+      "n_images": 793,
+      "n_boxes": 394,
+      "hard_pair": [
+        "Bengal",
+        "Egyptian_Mau"
+      ],
+      "hard_pair_err": 0.0734,
+      "n_trimaps": 793
+    },
+    {
+      "variant": 1,
+      "breeds": [
+        "Bengal",
+        "Egyptian_Mau",
+        "great_pyrenees",
+        "havanese"
+      ],
+      "species": {
+        "Bengal": "cat",
+        "Egyptian_Mau": "cat",
+        "great_pyrenees": "dog",
+        "havanese": "dog"
+      },
+      "n_images": 795,
+      "n_boxes": 390,
+      "hard_pair": [
+        "Bengal",
+        "Egyptian_Mau"
+      ],
+      "hard_pair_err": 0.0734,
+      "n_trimaps": 795
+    },
+    {
+      "variant": 2,
+      "breeds": [
+        "Birman",
+        "Siamese",
+        "basset_hound",
+        "keeshond"
+      ],
+      "species": {
+        "Birman": "cat",
+        "Siamese": "cat",
+        "basset_hound": "dog",
+        "keeshond": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 400,
+      "hard_pair": [
+        "Birman",
+        "Siamese"
+      ],
+      "hard_pair_err": 0.0425,
+      "n_trimaps": 800
+    },
+    {
+      "variant": 3,
+      "breeds": [
+        "British_Shorthair",
+        "Russian_Blue",
+        "beagle",
+        "leonberger"
+      ],
+      "species": {
+        "British_Shorthair": "cat",
+        "Russian_Blue": "cat",
+        "beagle": "dog",
+        "leonberger": "dog"
+      },
+      "n_images": 806,
+      "n_boxes": 404,
+      "hard_pair": [
+        "British_Shorthair",
+        "Russian_Blue"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 806
+    },
+    {
+      "variant": 4,
+      "breeds": [
+        "Birman",
+        "Ragdoll",
+        "german_shorthaired",
+        "pug"
+      ],
+      "species": {
+        "Birman": "cat",
+        "Ragdoll": "cat",
+        "german_shorthaired": "dog",
+        "pug": "dog"
+      },
+      "n_images": 806,
+      "n_boxes": 403,
+      "hard_pair": [
+        "Birman",
+        "Ragdoll"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 806
+    },
+    {
+      "variant": 5,
+      "breeds": [
+        "British_Shorthair",
+        "Russian_Blue",
+        "saint_bernard",
+        "shiba_inu"
+      ],
+      "species": {
+        "British_Shorthair": "cat",
+        "Russian_Blue": "cat",
+        "saint_bernard": "dog",
+        "shiba_inu": "dog"
+      },
+      "n_images": 805,
+      "n_boxes": 403,
+      "hard_pair": [
+        "British_Shorthair",
+        "Russian_Blue"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 805
+    },
+    {
+      "variant": 6,
+      "breeds": [
+        "British_Shorthair",
+        "Russian_Blue",
+        "german_shorthaired",
+        "samoyed"
+      ],
+      "species": {
+        "British_Shorthair": "cat",
+        "Russian_Blue": "cat",
+        "german_shorthaired": "dog",
+        "samoyed": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 399,
+      "hard_pair": [
+        "British_Shorthair",
+        "Russian_Blue"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 800
+    },
+    {
+      "variant": 7,
+      "breeds": [
+        "Birman",
+        "Siamese",
+        "english_setter",
+        "pomeranian"
+      ],
+      "species": {
+        "Birman": "cat",
+        "Siamese": "cat",
+        "english_setter": "dog",
+        "pomeranian": "dog"
+      },
+      "n_images": 807,
+      "n_boxes": 405,
+      "hard_pair": [
+        "Birman",
+        "Siamese"
+      ],
+      "hard_pair_err": 0.0425,
+      "n_trimaps": 807
+    },
+    {
+      "variant": 8,
+      "breeds": [
+        "Maine_Coon",
+        "Ragdoll",
+        "american_pit_bull_terrier",
+        "staffordshire_bull_terrier"
+      ],
+      "species": {
+        "Maine_Coon": "cat",
+        "Ragdoll": "cat",
+        "american_pit_bull_terrier": "dog",
+        "staffordshire_bull_terrier": "dog"
+      },
+      "n_images": 799,
+      "n_boxes": 405,
+      "hard_pair": [
+        "american_pit_bull_terrier",
+        "staffordshire_bull_terrier"
+      ],
+      "hard_pair_err": 0.133,
+      "n_trimaps": 799
+    },
+    {
+      "variant": 9,
+      "breeds": [
+        "Persian",
+        "Sphynx",
+        "american_bulldog",
+        "staffordshire_bull_terrier"
+      ],
+      "species": {
+        "Persian": "cat",
+        "Sphynx": "cat",
+        "american_bulldog": "dog",
+        "staffordshire_bull_terrier": "dog"
+      },
+      "n_images": 797,
+      "n_boxes": 404,
+      "hard_pair": [
+        "american_bulldog",
+        "staffordshire_bull_terrier"
+      ],
+      "hard_pair_err": 0.0486,
+      "n_trimaps": 797
+    },
+    {
+      "variant": 10,
+      "breeds": [
+        "Abyssinian",
+        "Bengal",
+        "scottish_terrier",
+        "wheaten_terrier"
+      ],
+      "species": {
+        "Abyssinian": "cat",
+        "Bengal": "cat",
+        "scottish_terrier": "dog",
+        "wheaten_terrier": "dog"
+      },
+      "n_images": 798,
+      "n_boxes": 397,
+      "hard_pair": [
+        "Abyssinian",
+        "Bengal"
+      ],
+      "hard_pair_err": 0.0426,
+      "n_trimaps": 798
+    },
+    {
+      "variant": 11,
+      "breeds": [
+        "Bengal",
+        "Egyptian_Mau",
+        "english_cocker_spaniel",
+        "havanese"
+      ],
+      "species": {
+        "Bengal": "cat",
+        "Egyptian_Mau": "cat",
+        "english_cocker_spaniel": "dog",
+        "havanese": "dog"
+      },
+      "n_images": 795,
+      "n_boxes": 390,
+      "hard_pair": [
+        "Bengal",
+        "Egyptian_Mau"
+      ],
+      "hard_pair_err": 0.0734,
+      "n_trimaps": 795
+    },
+    {
+      "variant": 12,
+      "breeds": [
+        "Bombay",
+        "Egyptian_Mau",
+        "american_pit_bull_terrier",
+        "staffordshire_bull_terrier"
+      ],
+      "species": {
+        "Bombay": "cat",
+        "Egyptian_Mau": "cat",
+        "american_pit_bull_terrier": "dog",
+        "staffordshire_bull_terrier": "dog"
+      },
+      "n_images": 786,
+      "n_boxes": 392,
+      "hard_pair": [
+        "american_pit_bull_terrier",
+        "staffordshire_bull_terrier"
+      ],
+      "hard_pair_err": 0.133,
+      "n_trimaps": 786
+    },
+    {
+      "variant": 13,
+      "breeds": [
+        "Maine_Coon",
+        "Persian",
+        "chihuahua",
+        "miniature_pinscher"
+      ],
+      "species": {
+        "Maine_Coon": "cat",
+        "Persian": "cat",
+        "chihuahua": "dog",
+        "miniature_pinscher": "dog"
+      },
+      "n_images": 806,
+      "n_boxes": 404,
+      "hard_pair": [
+        "chihuahua",
+        "miniature_pinscher"
+      ],
+      "hard_pair_err": 0.04,
+      "n_trimaps": 806
+    },
+    {
+      "variant": 14,
+      "breeds": [
+        "British_Shorthair",
+        "Russian_Blue",
+        "basset_hound",
+        "pomeranian"
+      ],
+      "species": {
+        "British_Shorthair": "cat",
+        "Russian_Blue": "cat",
+        "basset_hound": "dog",
+        "pomeranian": "dog"
+      },
+      "n_images": 807,
+      "n_boxes": 405,
+      "hard_pair": [
+        "British_Shorthair",
+        "Russian_Blue"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 807
+    },
+    {
+      "variant": 15,
+      "breeds": [
+        "Bombay",
+        "Sphynx",
+        "american_bulldog",
+        "boxer"
+      ],
+      "species": {
+        "Bombay": "cat",
+        "Sphynx": "cat",
+        "american_bulldog": "dog",
+        "boxer": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 400,
+      "hard_pair": [
+        "american_bulldog",
+        "boxer"
+      ],
+      "hard_pair_err": 0.0525,
+      "n_trimaps": 800
+    },
+    {
+      "variant": 16,
+      "breeds": [
+        "Bombay",
+        "Maine_Coon",
+        "american_bulldog",
+        "american_pit_bull_terrier"
+      ],
+      "species": {
+        "Bombay": "cat",
+        "Maine_Coon": "cat",
+        "american_bulldog": "dog",
+        "american_pit_bull_terrier": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 400,
+      "hard_pair": [
+        "american_bulldog",
+        "american_pit_bull_terrier"
+      ],
+      "hard_pair_err": 0.07,
+      "n_trimaps": 800
+    },
+    {
+      "variant": 17,
+      "breeds": [
+        "Bombay",
+        "Persian",
+        "chihuahua",
+        "miniature_pinscher"
+      ],
+      "species": {
+        "Bombay": "cat",
+        "Persian": "cat",
+        "chihuahua": "dog",
+        "miniature_pinscher": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 400,
+      "hard_pair": [
+        "chihuahua",
+        "miniature_pinscher"
+      ],
+      "hard_pair_err": 0.04,
+      "n_trimaps": 800
+    },
+    {
+      "variant": 18,
+      "breeds": [
+        "Abyssinian",
+        "Bengal",
+        "japanese_chin",
+        "pug"
+      ],
+      "species": {
+        "Abyssinian": "cat",
+        "Bengal": "cat",
+        "japanese_chin": "dog",
+        "pug": "dog"
+      },
+      "n_images": 799,
+      "n_boxes": 397,
+      "hard_pair": [
+        "Abyssinian",
+        "Bengal"
+      ],
+      "hard_pair_err": 0.0426,
+      "n_trimaps": 799
+    },
+    {
+      "variant": 19,
+      "breeds": [
+        "Birman",
+        "Ragdoll",
+        "great_pyrenees",
+        "wheaten_terrier"
+      ],
+      "species": {
+        "Birman": "cat",
+        "Ragdoll": "cat",
+        "great_pyrenees": "dog",
+        "wheaten_terrier": "dog"
+      },
+      "n_images": 807,
+      "n_boxes": 404,
+      "hard_pair": [
+        "Birman",
+        "Ragdoll"
+      ],
+      "hard_pair_err": 0.0975,
+      "n_trimaps": 807
+    },
+    {
+      "variant": 20,
+      "breeds": [
+        "Ragdoll",
+        "Sphynx",
+        "american_bulldog",
+        "boxer"
+      ],
+      "species": {
+        "Ragdoll": "cat",
+        "Sphynx": "cat",
+        "american_bulldog": "dog",
+        "boxer": "dog"
+      },
+      "n_images": 806,
+      "n_boxes": 403,
+      "hard_pair": [
+        "american_bulldog",
+        "boxer"
+      ],
+      "hard_pair_err": 0.0525,
+      "n_trimaps": 806
+    },
+    {
+      "variant": 21,
+      "breeds": [
+        "Abyssinian",
+        "Bengal",
+        "newfoundland",
+        "samoyed"
+      ],
+      "species": {
+        "Abyssinian": "cat",
+        "Bengal": "cat",
+        "newfoundland": "dog",
+        "samoyed": "dog"
+      },
+      "n_images": 799,
+      "n_boxes": 396,
+      "hard_pair": [
+        "Abyssinian",
+        "Bengal"
+      ],
+      "hard_pair_err": 0.0426,
+      "n_trimaps": 799
+    },
+    {
+      "variant": 22,
+      "breeds": [
+        "Birman",
+        "Siamese",
+        "newfoundland",
+        "yorkshire_terrier"
+      ],
+      "species": {
+        "Birman": "cat",
+        "Siamese": "cat",
+        "newfoundland": "dog",
+        "yorkshire_terrier": "dog"
+      },
+      "n_images": 800,
+      "n_boxes": 400,
+      "hard_pair": [
+        "Birman",
+        "Siamese"
+      ],
+      "hard_pair_err": 0.0425,
+      "n_trimaps": 800
+    }
+  ]
+}

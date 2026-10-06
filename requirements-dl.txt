@@ -1,0 +1,35 @@
+# Нейросетевые зависимости курса: лабораторные 4–6.
+# Включает базовый набор из requirements.txt.
+# Установка: pip install -r requirements-dl.txt
+#
+# В Kaggle и Colab torch и torchvision уже стоят с поддержкой GPU,
+# ставить их заново не нужно. Подробности в docs/setup.md.
+#
+# Локально на Linux pip по умолчанию скачивает torch со сборкой CUDA (больше 2 ГБ).
+# Если видеокарты NVIDIA нет, сначала поставьте CPU-версию:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# и только потом этот файл.
+
+-r requirements.txt
+
+# --- Лабы 4–6: основа ---
+torch>=2.4
+torchvision>=0.19
+
+# --- Лаба 4: классификация, предобученные модели ---
+timm>=1.0.9
+
+# --- Лаба 5: детекция ---
+# ultralytics тянет за собой opencv-python (не headless).
+# Если после установки перестал импортироваться cv2, см. docs/setup.md.
+ultralytics>=8.3.0
+
+# --- Лаба 6, часть 1: сегментация ---
+segmentation-models-pytorch>=0.4
+
+# --- Лаба 6, часть 2: промптовые и zero-shot модели ---
+# Через transformers доступны SAM и SAM 2 (промптовая сегментация),
+# CLIP (zero-shot классификация), OWLv2 и Grounding DINO (детекция по тексту).
+# SAM 2 появился в transformers 4.56, поэтому нижняя граница именно такая.
+# Веса моделей скачиваются с Hugging Face Hub при первом запуске.
+transformers>=4.56

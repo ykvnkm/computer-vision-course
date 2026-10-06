@@ -1,0 +1,7 @@
+# Всё, что создаёт get_data.py при скачивании (в репозиторий не коммитим)
+variant_*/
+variant_*.zip
+*.part
+.variant_*
+.oxford-pets-cache/
+__pycache__/

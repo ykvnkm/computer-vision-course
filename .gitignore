@@ -1,0 +1,39 @@
+# --- Материалы только для преподавателя ---
+teacher/
+# служебные скрипты сборки вариантов: раскрывают ключ к лабе 3, только у преподавателя
+tools/
+THEMATIC-PLAN-DETAILED*.md
+*.xlsx
+
+# --- Служебные папки редакторов и агентов ---
+.obsidian/
+.unlazy/
+.unlazy-hook-state.json
+.claude/settings.local.json
+.vscode/
+.idea/
+
+# --- Данные вариантов (скачиваются скриптом data/get_data.py) ---
+data/variant_*/
+data/*.zip
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+
+# --- Результаты обучения и веса моделей ---
+runs/
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+
+# --- Системный мусор ---
+.DS_Store
+Thumbs.db

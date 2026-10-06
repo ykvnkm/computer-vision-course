@@ -1,0 +1,38 @@
+# Данные: у преподавателя они есть, в репозиторий не кладём
+data/
+variant_*/
+*.zip
+*.tar
+*.tar.gz
+
+# Веса моделей и результаты обучения
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+*.engine
+runs/
+checkpoints/
+lightning_logs/
+wandb/
+
+# Кэш Python и Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+
+# Секреты: токены и ключи не публикуем
+.env
+kaggle.json
+
+# Системный мусор
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
